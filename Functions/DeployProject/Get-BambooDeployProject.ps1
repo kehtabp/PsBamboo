@@ -5,6 +5,8 @@
     If -DeploymentProjectId is specified it describes only that deploy project.
 .PARAMETER DeploymentProjectId
     Optional - Key for the Bamboo Deploy Project to be described
+.PARAMETER PlanKey
+    Optional - Plan Key to only pull deployment projects associated with a certain plan
 .EXAMPLE
     Get-BambooDeployProject
 .EXAMPLE
@@ -15,7 +17,8 @@ function Get-BambooDeployProject {
     param(
         [Parameter()]
         [ValidatePattern('\w+')]
-        [string]$DeploymentProjectId
+        [string]$DeploymentProjectId,
+        [string]$PlanKey
     )
 
     $ContentType = 'application/json'
@@ -24,6 +27,9 @@ function Get-BambooDeployProject {
     $resource = 'deploy/project/all'
     if ($DeploymentProjectId) {
         $resource = "deploy/project/$DeploymentProjectId"
+    }
+    if ($DeploymentProjectId) {
+        $resource = "deploy/project//forPlan?$PlanKey"
     }
 
     Invoke-BambooRestMethod -Resource $resource -ContentType $ContentType |
