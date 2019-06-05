@@ -1,6 +1,6 @@
 PsBamboo PowerShell module
 ==========================
-[![Build status](https://ci.appveyor.com/api/projects/status/etxmi7i4qc8qtloe?svg=true)](https://ci.appveyor.com/project/muratiakos/psbamboo)
+[![Build status](https://ci.appveyor.com/api/projects/status/9ytvm71ff50qo362?svg=true)](https://ci.appveyor.com/project/muratiakos/psbamboo-vfuv4)
 
 PsBamboo is a PowerShell module that provides a wrapper for [Bamboo][bamboo]
 [REST API][bambooapi] to allow easy and fast authenticated access to
@@ -8,7 +8,7 @@ PsBamboo is a PowerShell module that provides a wrapper for [Bamboo][bamboo]
 
 The module handles both authenticated and anonymous methods, it supports paged
 reading and manipulation of the following [Bamboo][bamboo] resources:
-`Project`, `Plan`, `PlanBranch`, `Build`, `Artifact`, `Server`, `CurrentUser`
+`Project`, `Plan`, `PlanBranch`, `Build`, `Artifact`, `Server`, `CurrentUser`,`DeployProject`
 
 In addition to several already implemented functions, it also provides
 generic Cmdlets to access any not yet covered [Bamboo REST API][bambooapi]
